@@ -29,8 +29,8 @@ set +x
 # Cleanup function
 cleanup() {
   set +e
-  set +x
   echo "Caught termination signal! Shutting down daemons..."
+  set -x
   "$SPARK_HOME/sbin/stop-worker.sh"
   "$SPARK_HOME/sbin/stop-master.sh"
   "$HBASE_HOME/bin/hbase-daemon.sh" stop regionserver
@@ -39,7 +39,7 @@ cleanup() {
   "$HADOOP_HOME/sbin/stop-yarn.sh"
   "$HADOOP_HOME/sbin/stop-dfs.sh"
   pkill sshd
-  set -x
+  set +x
 }
 trap cleanup EXIT
 
