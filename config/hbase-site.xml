@@ -1,4 +1,26 @@
-<property>
-  <name>hbase.rootdir</name>
-  <value>hdfs://localhost:9000/hbase</value>
-</property>
+<configuration>
+  <property>
+    <name>hbase.rootdir</name>
+    <value>hdfs://localhost:9000/hbase</value>
+  </property>
+  <property>
+    <name>hbase.cluster.distributed</name>
+    <value>true</value>
+  </property>
+  <property>
+    <name>hbase.wal.provider</name>
+    <value>filesystem</value>
+  </property>
+  <property>
+    <name>hbase.master.hostname</name>
+    <value>localhost</value>
+  </property>
+  <property>
+    <name>hbase.regionserver.hostname</name>
+    <value>localhost</value>
+  </property>
+  <property>
+    <name>hbase.unsafe.stream.capability.enforce</name>
+    <value>false</value>
+  </property>
+</configuration>
